@@ -14,7 +14,8 @@ Repository ini Sebagai Laporan Resmi Soal Shift Modul 2 Praktikum Sistem Operasi
 ### no 2 (a dan b saja, c d dan e belum)
 
 ### no 3 (a dan b saja, c dan d belum)
-Banyak sekali kendala yang dialami , seperti :
+
+Kendala yang dialami :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
-3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal nya.
+3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal dan membutuhkan waktu yang cukup lama untuk mengerjakannya
