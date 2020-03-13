@@ -9,11 +9,11 @@ Repository ini Sebagai Laporan Resmi Soal Shift Modul 2 Praktikum Sistem Operasi
   
 ## Kendala :
 
-## no 1 (belum)
+### no 1 (belum)
 
-## no 2 (a dan b saja, c d dan e belum)
+### no 2 (a dan b saja, c d dan e belum)
 
-## no 3 (a dan b saja, c dan d belum)
+### no 3 (a dan b saja, c dan d belum)
 Banyak sekali kendala yang dialami , seperti :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
