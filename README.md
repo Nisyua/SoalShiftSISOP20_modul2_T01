@@ -42,7 +42,14 @@ Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsu
 ### Soal 3
 
 Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).
+
+### Soal 3.a.
+
+Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu lima detik kemudian membuat direktori yang kedua bernama "sedaap".
+
+
   `int main() {
+  	
 	pid_t child_id,child_id2,child_id3;
 	int status;
 
@@ -59,11 +66,19 @@ Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memp
 	} else {
 	// this is parent
 	  while ((wait(&status)) > 0);
+	  child_id2 = fork();
+  
+	if (child_id2 < 0) {
+    		exit(EXIT_FAILURE); // Jika gagal membuat proses baru, program akan berhenti
+ 	}
+
+ 	if (child_id2 == 0) {
+    	// this is child
+    		sleep (5);
+		char *argv[] = {"mkdir", "-p", "sedaap", NULL};
+		execv("/bin/mkdir", argv);
+ 	 } 
  `
-
-### Soal 3.a.
-
-Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu lima detik kemudian membuat direktori yang kedua bernama "sedaap".
 
 ### Soal 3.b.
 
