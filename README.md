@@ -80,14 +80,28 @@ int main() {
 		execv("/bin/mkdir", argv);
  	 } 
 ```
-* membuat direktori pada `/home/nisyua/modul_2/ ` bernama *indomie* menggunakan perintah `mkdir`dan terdapat argumen `-p` yang berfungsi untuk membuat directory pada `/home/nisyua/modul_2` yang belum terbuat.
+* membuat direktori pada `/home/nisyua/modul_2/ ` bernama **indomie** menggunakan perintah `mkdir`dan terdapat argumen `-p` yang berfungsi untuk membuat directory pada `/home/nisyua/modul_2` yang belum terbuat.
 * syntax argument : `argv[n] = { {your-program-name}, {argument[1]}, {argument[2]},.....,{argument[n-2]}, NULL };`
-* parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu *sedaap*
+* parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap**
 
 
 ### Soal 3.b.
 
 Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori "***/home/[USER]/modul2/***". Setelah tugas sebelumnya selesai, ternyata tidak hanya itu tugasnya.
+
+```C
+child_id3 = fork();
+  
+	if (child_id3 < 0) {
+ 		exit(EXIT_FAILURE); // Jika gagal membuat proses baru, program akan berhenti
+	 }
+
+	if (child_id3 == 0) {
+    	// this is child
+		char *argv[] = {"unzip", "jpg.zip", NULL};
+		execv("/usr/bin/unzip", argv);
+	}
+```
 
 ### Soal 3.c.
 b  
