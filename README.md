@@ -47,9 +47,8 @@ Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memp
 
 Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu lima detik kemudian membuat direktori yang kedua bernama "sedaap".
 
-
-  `int main() {
-  	
+`
+int main() {
 	pid_t child_id,child_id2,child_id3;
 	int status;
 
@@ -78,7 +77,7 @@ Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/
 		char *argv[] = {"mkdir", "-p", "sedaap", NULL};
 		execv("/bin/mkdir", argv);
  	 } 
- `
+`
 
 ### Soal 3.b.
 
