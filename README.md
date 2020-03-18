@@ -48,8 +48,10 @@ Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memp
 Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu lima detik kemudian membuat direktori yang kedua bernama "sedaap".
 
 
-``	int main() {
+```	
+int main() {
 	pid_t child_id,child_id2,child_id3;
+
 	int status;
 
 	child_id = fork();
@@ -77,7 +79,7 @@ Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/
 		char *argv[] = {"mkdir", "-p", "sedaap", NULL};
 		execv("/bin/mkdir", argv);
  	 } 
-``
+```
 
 ### Soal 3.b.
 
@@ -97,3 +99,4 @@ Kendala yang dialami :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
 3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal dan membutuhkan waktu yang cukup lama untuk mengerjakannya
+a
