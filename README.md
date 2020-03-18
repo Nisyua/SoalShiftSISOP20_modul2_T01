@@ -27,25 +27,24 @@ Pembahasan:
 
 ### Soal 2
 
-Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.
+*Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.
 
-### Soal 2.a.
+### A
 
-Deskripsi:
-Pertama-tama, Kiwa membuat sebuah folder khusus, di dalamnya dia membuat sebuah program C yang per 30 detik membuat sebuah folder dengan nama timestamp [YYYY-mm-dd_HH:ii:ss].
+*Kiwa membuat sebuah folder khusus, di dalamnya dia membuat sebuah program C yang per 30 detik membuat sebuah folder dengan nama timestamp [YYYY-mm-dd_HH:ii:ss].
 
-### Soal 2.b.
+### B
 
-Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsum.photos/, dimana tiap gambar di download setiap 5 detik. Tiap gambar berbentuk persegi dengan ukuran (t%1000)+100 piksel dimana t adalah detik Epoch Unix. Gambar tersebut diberi nama dengan format timestamp [YYYY-mm-dd_HH:ii:ss].
+*Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsum.photos/, dimana tiap gambar di download setiap 5 detik. Tiap gambar berbentuk persegi dengan ukuran **(t%1000)+100 piksel** dimana t adalah detik Epoch Unix. Gambar tersebut diberi nama dengan format timestamp [YYYY-mm-dd_HH:ii:ss].
 
 
 ### Soal 3
 
-Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).
+*Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).*
 
-### Soal 3.a.
+### A
 
-Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".
+*Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".*
 
 
 ```C	
@@ -85,9 +84,9 @@ int main() {
 * parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap**
 
 
-### Soal 3.b.
+### B
 
-Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori "***/home/[USER]/modul2/***". Setelah tugas sebelumnya selesai, ternyata tidak hanya itu tugasnya.
+Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori "***/home/[USER]/modul2/***". 
 
 ```C
 child_id3 = fork();
@@ -98,18 +97,21 @@ child_id3 = fork();
 
 	if (child_id3 == 0) {
     	// this is child
-		char *argv[] = {"unzip", "jpg.zip", NULL};
+		char *argv[] = {"unzip", "jpg.zip", NULL}; //
 		execv("/usr/bin/unzip", argv);
 	}
 ```
 
-### Soal 3.c.
-b  
-Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "/home/[USER]/modul2/jpg/") harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
+* Untuk mengekstrak file **jpg.zip** menggunakan perintah `unzip`
 
-### Soal 3.d.
 
-Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
+### C
+
+*Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "/home/[USER]/modul2/jpg/") harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
+
+### D
+
+*Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
 
 ## Kendala 
 
