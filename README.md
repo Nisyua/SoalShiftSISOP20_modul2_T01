@@ -42,6 +42,24 @@ Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsu
 ### Soal 3
 
 Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).
+  `int main() {
+	pid_t child_id,child_id2,child_id3;
+	int status;
+
+	child_id = fork();
+  
+	if (child_id < 0) {
+		exit(EXIT_FAILURE); // Jika gagal membuat proses baru, program akan berhenti
+	}
+
+	if (child_id == 0) {
+	// this is child
+		char *argv[] = {"mkdir", "-p", "indomie", NULL};
+		execv("/bin/mkdir", argv);
+	} else {
+	// this is parent
+	  while ((wait(&status)) > 0);
+ `
 
 ### Soal 3.a.
 
