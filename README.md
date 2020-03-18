@@ -45,7 +45,7 @@ Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memp
 
 ### Soal 3.a.
 
-Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu lima detik kemudian membuat direktori yang kedua bernama "sedaap".
+Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".
 
 
 ```C	
@@ -80,6 +80,8 @@ int main() {
 		execv("/bin/mkdir", argv);
  	 } 
 ```
+* membuat direktori pada `/home/nisyua/modul_2/indomie` menggunakan perintah `mkdir`dan terdapat argumen `-p` berfungsi untuk membuat directory pada `/home/nisyua/modul_2` yang belum terbuat.
+* syntax argument : `argv[n] = { {your-program-name}, {argument[1]}, {argument[2]},.....,{argument[n-2]}, NULL };`
 
 ### Soal 3.b.
 
