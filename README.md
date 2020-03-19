@@ -235,7 +235,7 @@ child_id6 = fork();
 ![](img/mod2no3_2.png)
 ![](img/indomie.png)
 ![](img/indomie2.png)
-![](indomietxt.png)
+![](img/indomietxt.png)
 
 ## Kendala 
 
