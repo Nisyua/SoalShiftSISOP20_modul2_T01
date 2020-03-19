@@ -215,6 +215,22 @@ child_id4 = fork();
 
 *Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
 
+```C
+child_id6 = fork();
+
+	if (child_id6 < 0) {
+		exit(EXIT_FAILURE);
+	}
+
+	if (child_id6 == 0) {
+		execl("/usr/bin/find", "find", "/home/nisyua/modul_2/indomie", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);
+	} else {
+	while(wait((&status)) > 0);
+	sleep(3);
+	execl("/usr/bin/find", "find", "/home/nisyua/modul_2/indomie", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
+            }
+```
+
 ## Kendala 
 
 Kendala yang dialami :
