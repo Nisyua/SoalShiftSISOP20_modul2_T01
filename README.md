@@ -228,6 +228,13 @@ child_id6 = fork();
 	sleep(3);
 	execl("/usr/bin/find", "find", "/home/nisyua/modul_2/indomie", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
 ```
+### Screenshots
+![](img/mod2no3.png)
+![](img/mod2no3_1.png)
+![](img/mod2no3_2.png)
+![](img/indomie.png)
+![](img/indomie2.png)
+![](img/indomie isi txt.png)
 
 ## Kendala 
 
