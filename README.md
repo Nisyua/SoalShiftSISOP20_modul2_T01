@@ -65,13 +65,11 @@ int main() {
 char str[50], var[100], final[100], save[100]; 
     int a; // untuk t=(t%1000)+100
     time_t t, w; //deklarasi variabel
-    //variabel t digunakan untuk menyimpan timestamp dalam format epoch
     t = time(NULL);
-    struct tm *tm, *wm; //variabel tm digunakan untuk menyimpan timestamp yang sudah sesuai dengan localtime
+    struct tm *tm, *wm; 
     
     tm = localtime(&t);
     strftime(str, 50, "khusus/%Y-%m-%d_%H:%M:%S", tm);
-    //strftime digunakan untuk melakukan formating dari waktu tm menjadi string sesuai dengan format yg diminta (YYYY-mm-dd_HH:ii:ss) ke dalam buffer str sebesar 50.
 ```
 * kita harus mendeklarasikan string terlebih dahulu :
   `str[50]` adalah besar string untuk nama folder,
@@ -88,7 +86,10 @@ child_id2 = fork();
 		execv("/bin/mkdir", argv);
 	}
 ```
-* Kode diatas merupakan kode yang akan membuat folder baru di dalam folder `khusus` yang nantinya nama folder tersebut sesuai dengan timestamp sesuai dengan format yang diminta yaitu ***(YYYY-mm-dd_HH:ii:ss)***
+* variabel t digunakan untuk menyimpan timestamp dalam format epoch
+* variabel `tm` digunakan untuk menyimpan timestamp yang sudah sesuai dengan localtime
+* `strftime` digunakan untuk melakukan formating dari waktu `tm` menjadi string sesuai dengan format yg diminta (YYYY-mm-dd_HH:ii:ss) ke dalam buffer str sebesar 50.
+* Kode diatas merupakan kode yang akan membuat folder baru di dalam folder **khusus** yang nantinya nama folder tersebut sesuai dengan timestamp sesuai dengan format yang diminta yaitu ***(YYYY-mm-dd_HH:ii:ss)***
 
 ### B
 
@@ -234,7 +235,7 @@ child_id6 = fork();
 ![](img/mod2no3_2.png)
 ![](img/indomie.png)
 ![](img/indomie2.png)
-![](indomie isi txt.png)
+![](indomietxt.png)
 
 ## Kendala 
 
