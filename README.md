@@ -189,6 +189,28 @@ child_id3 = fork();
 
 *Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "/home/[USER]/modul2/jpg/") harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
 
+```C
+child_id4 = fork();
+
+	if (child_id4 < 0){
+		exit(EXIT_FAILURE);
+	}
+
+	if (child_id4 == 0){
+		execl("/usr/bin/find", "find", "/home/nisyua/modul_2/jpg", "-type", "f", "-name", "*", "-exec", "mv", "-t", "/home/nisyua/modul_2/sedaap", "{}", "+", (char *) NULL);
+	} else {
+	while ((wait(&status)) > 0);
+	  child_id5 = fork();
+
+	if(child_id5 < 0) {
+		exit(EXIT_FAILURE);
+	}
+
+	if(child_id5 == 0) {
+		execl("/usr/bin/find", "find", "/home/nisyua/modul_2/jpg/", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "mv", "-t", "/home/nisyua/modul_2/indomie/", "{}", "+", (char *) NULL);
+	}
+```
+
 ### D
 
 *Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
