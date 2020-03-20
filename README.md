@@ -101,7 +101,7 @@ pid_t pid, sid; // Variabel untuk menyimpan PID
   close(STDERR_FILENO);
 ```
 
-**Main Program jengjeng
+**Main Program jengjeng**
 ```c
   while (1) {
     varwaktu = time(NULL);
