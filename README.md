@@ -17,7 +17,6 @@ Buatlah program C yang menyerupai crontab untuk menjalankan script bash dengan k
         Jam: 0-23 atau * (any value)
         Path file .sh
 ```
-
 **b.** Program akan mengeluarkan pesan error jika argumen yang diberikan tidak sesuai
 **c.** Program hanya menerima 1 config cron
 **d.** Program berjalan di background (daemon)
