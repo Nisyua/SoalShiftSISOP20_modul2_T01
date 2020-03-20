@@ -132,7 +132,7 @@ child_id2 = fork();
 ```c
 if (fork()==0) execv("/usr/bin/wget", args);
 ```
-perintah diatas merupakan perintah untuk melakukan downloading dengan waktu download 5 detik setiap gambarnya menggunakan perintah `sleep(5);`
+* perintah diatas merupakan perintah untuk melakukan downloading dengan waktu download 5 detik setiap gambarnya menggunakan perintah `sleep(5);`
 
 ### Screenshot
 Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder baru didalam folder khusus dengan format nama timestamp
