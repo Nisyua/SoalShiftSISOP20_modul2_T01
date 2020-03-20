@@ -292,4 +292,4 @@ Kendala yang dialami :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
 3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal dan membutuhkan waktu yang cukup lama untuk mengerjakannya
-4. Jarak yang cukup jauh mengakibatkan kami susah untuk berkordinasi karena Covid-19 .
+4. Jarak yang cukup jauh mengakibatkan kami susah untuk berkordinasi satu dengan yang lain karena Covid-19 .
