@@ -262,16 +262,11 @@ child_id6 = fork();
 ```
 * Terdapat fungsi `find` yang berfungsi untuk mencari semua nama yang bertipe direktori di ***/home/nisyua/modul_2/indomie*** 
 * Berfungsi untuk membuat fie ***coba1.txt*** di tiap direktori yang ada.
-```C
-"-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);
-```
+`"-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);`
 * Sleep(3) atau selang 3 detik, maka membuat file ***Coba2.txt*** pada setiap direktori yang ada
-```C
-"-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
-```
-```
+`"-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);` 
 
-### Screenshots
+## Screenshots
 ![](img/mod2no3.png)
 ![](img/mod2no3_1.png)
 ![](img/mod2no3_2.png)
@@ -285,4 +280,3 @@ Kendala yang dialami :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
 3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal dan membutuhkan waktu yang cukup lama untuk mengerjakannya
-a
