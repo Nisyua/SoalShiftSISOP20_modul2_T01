@@ -89,7 +89,7 @@ child_id2 = fork();
 		execv("/bin/mkdir", argv);
 	}
 ```
-* variabel t digunakan untuk menyimpan timestamp dalam format epoch
+* variabel `t` digunakan untuk menyimpan timestamp dalam format epoch
 * variabel `tm` digunakan untuk menyimpan timestamp yang sudah sesuai dengan localtime
 * `strftime` digunakan untuk melakukan formating dari waktu `tm` menjadi string sesuai dengan format yg diminta (YYYY-mm-dd_HH:ii:ss) ke dalam buffer str sebesar 50.
 * Kode diatas merupakan kode yang akan membuat folder baru di dalam folder **khusus** yang nantinya nama folder tersebut sesuai dengan timestamp sesuai dengan format yang diminta yaitu ***(YYYY-mm-dd_HH:ii:ss)***
@@ -127,9 +127,12 @@ child_id2 = fork();
 	}    
 }
 ```
-* `child_id3` ini merupakan step untuk melakukan penyimpanan gambar yang akan di download pada link `https://picsum.photos/` dan nantinya akan disimpan didalam folder baru `child_id2` dengan format nama timestamp yang merupakan child dari `child_id1` yaitu folder dengan nama `khusus`
+* `child_id3` ini merupakan step untuk melakukan penyimpanan gambar yang akan di download pada link **https://picsum.photos/** dan nantinya akan disimpan didalam folder baru `child_id2` dengan format nama timestamp yang merupakan child dari `child_id1` yaitu folder dengan nama `khusus`
 * pada langkah ini, kita melakukan looping sebanyak 20 kali karena maksimal gambar yang akan disimpan pada `child_id3` maksimal 20 gambar. Gambar yang nantinya akan didownload memiliki format nama timestamp yaitu ***%Y-%m-%d_%H:%M:%S***
-* `if (fork()==0) execv("/usr/bin/wget", args);` perintah ini merupakan perintah untuk melakukan downloading dengan waktu download 5 detik setiap gambarnya menggunakan perintah `sleep(5);`
+```c
+if (fork()==0) execv("/usr/bin/wget", args);
+```
+perintah diatas merupakan perintah untuk melakukan downloading dengan waktu download 5 detik setiap gambarnya menggunakan perintah `sleep(5);`
 
 ### Screenshot
 Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder baru didalam folder khusus dengan format nama timestamp
@@ -249,7 +252,7 @@ child_id4 = fork();
 * Sama seperti child_id4, pada proses `if(child_id5 == 0)` juga sama sistemnya. `find` di jpg yang bertipe direktori pada ***/home/nisyua/modul_2/jpg***, lalu pindahkan semua ke direktori ***indomie***
 
 ## D
-*Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
+*Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama **coba1.txt**, lalu 3 detik kemudian membuat file bernama **coba2.txt**. (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
 
 ```C
 child_id6 = fork();
@@ -271,7 +274,7 @@ child_id6 = fork();
 "-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);
 ```
 * Sleep(3) atau selang 3 detik, maka membuat file ***Coba2.txt*** pada setiap direktori yang ada
-```c
+```C
 "-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
 ``` 
 
