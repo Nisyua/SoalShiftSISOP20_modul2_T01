@@ -123,10 +123,23 @@ child_id2 = fork();
 
 *Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).*
 
+### Library yang digunakan
+
+```C
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h> //pid_t
+#include <unistd.h> //fork()
+#include <syslog.h>
+#include <wait.h>
+#include <dirent.h>
+#include <sys/unistd.h>
+#include <sys/wait.h>
+```
+
 ### A
 
-*Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".*
-
+*Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".
 
 ```C	
 int main() {
@@ -160,6 +173,8 @@ int main() {
 		execv("/bin/mkdir", argv);
  	 } 
 ```
+
+* `pid_t child_id,child_id2,child_id3;` menyimpan PID (Parent ID) di masing-masing variabel child. sedangkan untuk `int status` berfungsi untuk deklarasi variabel status bertipe integer.
 * membuat direktori pada `/home/nisyua/modul_2/ ` bernama **indomie** menggunakan perintah `mkdir`dan terdapat argumen `-p` yang berfungsi untuk membuat directory pada `/home/nisyua/modul_2` yang belum terbuat.
 * syntax argument : `argv[n] = { {your-program-name}, {argument[1]}, {argument[2]},.....,{argument[n-2]}, NULL };`
 * parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap**
