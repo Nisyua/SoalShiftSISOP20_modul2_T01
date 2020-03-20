@@ -90,6 +90,14 @@ child_id2 = fork();
 * variabel `tm` digunakan untuk menyimpan timestamp yang sudah sesuai dengan localtime
 * `strftime` digunakan untuk melakukan formating dari waktu `tm` menjadi string sesuai dengan format yg diminta (YYYY-mm-dd_HH:ii:ss) ke dalam buffer str sebesar 50.
 * Kode diatas merupakan kode yang akan membuat folder baru di dalam folder **khusus** yang nantinya nama folder tersebut sesuai dengan timestamp sesuai dengan format yang diminta yaitu ***(YYYY-mm-dd_HH:ii:ss)***
+### Screenshots
+   1. Setelah program sudah dicompile dan sudah di run, maka nanti pada ***/home/[USER]/*** ada folder baru dengan nama `khusus`
+   
+![](img/ssfolderkhusus.jpg)
+
+   2. Jika folder khusus tersebut dibuka, akan ada folder baru dengan format nama timestamp ***(YYYY-mm-dd_HH:ii:ss)***
+   
+![](img/ssfolder.jpg)
 
 ### B
 
@@ -118,6 +126,11 @@ child_id2 = fork();
 * `child_id3` ini merupakan step untuk melakukan penyimpanan gambar yang akan di download pada link `https://picsum.photos/` dan nantinya akan disimpan didalam folder baru `child_id2` dengan format nama timestamp yang merupakan child dari `child_id1` yaitu folder dengan nama `khusus`
 * pada langkah ini, kita melakukan looping sebanyak 20 kali karena maksimal gambar yang akan disimpan pada `child_id3` maksimal 20 gambar. Gambar yang nantinya akan didownload memiliki format nama timestamp yaitu ***%Y-%m-%d_%H:%M:%S***
 * `if (fork()==0) execv("/usr/bin/wget", args);` perintah ini merupakan perintah untuk melakukan downloading dengan waktu download 5 detik setiap gambarnya menggunakan perintah `sleep(5);`
+
+### Screenshot
+Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder baru didalam folder khusus dengan format nama timestamp
+
+![](img/ss20gambar.jpg)
 
 ### Soal 3
 
@@ -250,7 +263,7 @@ child_id6 = fork();
 ![](img/mod2no3_2.png)
 ![](img/indomie.png)
 ![](img/indomie2.png)
-![](indomietxt.png)
+![](img/indomietxt.png)
 
 ## Kendala 
 
