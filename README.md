@@ -217,7 +217,7 @@ child_id3 = fork();
 
 ### C
 
-*Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "/home/[USER]/modul2/jpg/") harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
+*Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "***/home/[USER]/modul2/jpg/"***) harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
 
 ```C
 child_id4 = fork();
@@ -240,8 +240,8 @@ child_id4 = fork();
 		execl("/usr/bin/find", "find", "/home/nisyua/modul_2/jpg/", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "mv", "-t", "/home/nisyua/modul_2/indomie/", "{}", "+", (char *) NULL);
 	}
 ```
-* Pada proses `if (child_id4 == 0)` , `find` di jpg yang bertipe file dengan semua nama di direktori `/home/nisyua/modul_2/jpg` setelah itu `move` semuanya ke sedaap dan tunggu selama 2detik. 
-* Sama seperti child_id4, pada proses `if(child_id5 == 0)` juga sama sistemnya. `find` di jpg yang bertipe direktori pada `/home/nisyua/modul_2/jpg`, lalu pindahkan semua ke direktori *indomie*
+* Pada proses `if (child_id4 == 0)` , `find` di jpg yang bertipe file dengan semua nama di direktori ***/home/nisyua/modul_2/jpg*** setelah itu `move` semuanya ke ***sedaap*** dan tunggu selama 2detik. 
+* Sama seperti child_id4, pada proses `if(child_id5 == 0)` juga sama sistemnya. `find` di jpg yang bertipe direktori pada ***/home/nisyua/modul_2/jpg***, lalu pindahkan semua ke direktori ***indomie***
 
 ### D
 *Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
@@ -260,6 +260,13 @@ child_id6 = fork();
 	sleep(3);
 	execl("/usr/bin/find", "find", "/home/nisyua/modul_2/indomie", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
 ```
+* Terdapat fungsi `find` yang berfungsi untuk mencari semua nama yang bertipe direktori di ***/home/nisyua/modul_2/indomie*** 
+
+```C
+"-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);
+```
+* Berfungsi untuk membuat fie ***coba1.txt*** di tiap direktori yang ada.
+
 ### Screenshots
 ![](img/mod2no3.png)
 ![](img/mod2no3_1.png)
