@@ -137,7 +137,7 @@ Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder bar
 *Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).*
 
 Source Code : 
-[Github] (http://github,com/SoalShiftSISOP20_modul2_T01/soal 3/jaya112.c) 
+[Nomor 3] (http://github,com/SoalShiftSISOP20_modul2_T01/soal3/jaya112.c) 
 ### Library yang digunakan
 
 ```C
