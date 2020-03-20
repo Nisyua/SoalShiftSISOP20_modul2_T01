@@ -262,9 +262,13 @@ child_id6 = fork();
 ```
 * Terdapat fungsi `find` yang berfungsi untuk mencari semua nama yang bertipe direktori di ***/home/nisyua/modul_2/indomie*** 
 * Berfungsi untuk membuat fie ***coba1.txt*** di tiap direktori yang ada.
-`"-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);`
+```C
+"-exec", "sh", "-c", "for d; do touch $d/coba1.txt;done", "{}", "+", (char *) NULL);
+```
 * Sleep(3) atau selang 3 detik, maka membuat file ***Coba2.txt*** pada setiap direktori yang ada
-`"-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);` 
+```c
+"-exec", "sh", "-c", "for d; do touch $d/coba2.txt;done", "{}", "+", (char *) NULL);
+``` 
 
 ## Screenshots
 ![](img/mod2no3.png)
