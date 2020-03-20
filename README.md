@@ -122,10 +122,11 @@ pid_t pid, sid; // Variabel untuk menyimpan PID
 ![](img/plis1.png)
 ![](img/almostbenerlagi.png)
 
-* Program tersebut menjalankan file test.sh setiap menit dan setiap jam pada jam 20 menit 27. Jika dilihat shell scritpt yang dijalankan akan terus melakukan mkdir dengan date saat ini sampai jam 20 dan menit 27 berikutnya.
+* Program tersebut menjalankan file test.sh setiap menit dan setiap jam pada jam 20 menit 27. Jika dilihat shell scritpt yang dijalankan akan terus melakukan mkdir dengan date saat ini sampai jam 20 dan menit 27 berikutnya. namun disini terlihat pada menit pertama, langsung keluar 2 folder begitu pula seterusnya. saya tidak tahu kenapa dan tidak tau salahnya dimana :(
 
 **Isi File test.sh**
-[](img/bash.png)
+
+![](img/bash.png)
 
 ## Kesulitan
 1. Bobot soalnya susah banget :") 
@@ -242,6 +243,10 @@ if (fork()==0) execv("/usr/bin/wget", args);
 Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder baru didalam folder khusus dengan format nama timestamp
 
 ![](img/ss20gambar.jpg)
+
+## Kesulitan
+1. Soal yang rumit , susah, level soalnya tinggi sedangkan kami masih pengguna pemula ubuntu 
+2. Waktu yang diberikan untuk mengerjakan soal shift hanya sebentar jadi tidak sempat mencoba nomor 2cd dan e
 
 ## Soal 3
 
