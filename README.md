@@ -117,6 +117,9 @@ pid_t pid, sid; // Variabel untuk menyimpan PID
 * Melakukan comparing terhadap argumen yang dimasukkan oleh pengguna menggunakan `strcmp`. Condition yang ada di dalam if akan melakukan pengecekan. Bernilai true apabila argumen yang diinputkan sama dengan * atau waktunya sesuai dengan waktu saat ini. 
 * `sleep (1)` digunakan untuk mengatur agar fungsi while berjalan setiap satu detik.
 
+## ScreenShot
+
+
 ## Kesulitan
 1. Bobot soalnya susah banget :") 
 2. Pada saat ngerun , saya ngeset untuk tiap menit dan tiap jam. namun pada menit pertama, folder yang muncul langsung ada 2, tidak satu persatu. dan begitu seterusnya 
