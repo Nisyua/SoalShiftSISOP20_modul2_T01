@@ -28,6 +28,7 @@ Pembahasan:
 ## Soal 2
 
 Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.
+[Source Code](https://github.com/anissaidatur/SoalShiftSISOP20_modul2_T01/blob/master/soal_2/dua.c)
 
 ## A 
 
