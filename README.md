@@ -19,16 +19,107 @@ Buatlah program C yang menyerupai crontab untuk menjalankan script bash dengan k
 ```
 
 **b.** Program akan mengeluarkan pesan error jika argumen yang diberikan tidak sesuai
-
 **c.** Program hanya menerima 1 config cron
-
 **d.** Program berjalan di background (daemon)
-
 **e.** Tidak boleh menggunakan fungsi system()
-
 Contoh: `./program \* 34 7 /home/somi/test.sh` (script bash test.sh akan dijalankan setiap jam 07.34 waktu lokal)
 
 Pembahasan:
+
+```c
+include <stdio.h> // fungsi untuk input output, seperti sprintf
+#include <stdlib.h> // library fungsi umum , seperti exit(), atoi()
+#include <unistd.h> // untuk melakukan system call ke kernel linux seperrti fork()
+#include <sys/types.h> // tipe data pid_t
+#include <sys/stat.h>
+#include <syslog.h>
+#include <string.h>
+#include <time.h>
+```
+setelah itu deklaraasi variabel pada fungsi main() 
+```c
+int main (int argc, char *argv[])
+```
+Disini masing-masing argumen akan dicek apakah sesuai dengan ketentuan yang ada.Jika argumen yang dimasukkan tidak benar, maka akan menampilkan tulisan *Argumen Salah*
+```c
+if (argc != 5) {
+    printf("Argumen salah\n");
+    exit(EXIT_FAILURE);
+  }
+  if (!(((atoi(argv[1]) >= 0) && (atoi(argv[1]) < 60)) || ((strcmp(argv[1],"*")) == 0))) {
+    printf("Argumen pertama antara 0-59 or *\n");
+    exit(EXIT_FAILURE);
+  }
+  if (!(((atoi(argv[2]) >= 0) && (atoi(argv[2]) < 60)) || ((strcmp(argv[2],"*")) == 0))) {
+    printf("Argumen kedua antara 0-59 or *\n");
+    exit(EXIT_FAILURE);
+  }
+  if (!(((atoi(argv[3]) >= 0) && (atoi(argv[3]) < 24)) || ((strcmp(argv[3],"*")) == 0))) {
+    printf("Argumen ketiga antara 0-23 or *\n");
+    exit(EXIT_FAILURE);
+  }
+```
+* argc dan argv berperan untuk memberikan argumen yang diberikan user melalui command line.argv merupakan array yang berisikan pointer of char. Dalam penerapannya, argv dapat dipanggil seperti two-dimensional array. Contohnya seperti pada code yang diatas ya
+* argv[1] akan berisi argument detik. Berfungsi untuk mengecek apakah nilainya berupa '*' atau diantara 0-59 . difungsikan untuk mengubah simbol asterisk( * ) menjadi integer value melalui fungsi atoi( ).
+* argv[2] akan berisi argument menit. Berfungsi untuk mengecek apakah nilainya berupa '*' atau diantara 0-59 . difungsikan untuk mengubah simbol asterisk( * ) menjadi integer value melalui fungsi atoi( ).
+* argv[3] akan berisi argument detik. Berfungsi untuk mengecek apakah nilainya berupa '*' atau diantara 0-23 . difungsikan untuk mengubah simbol asterisk( * ) menjadi integer value melalui fungsi atoi( ).
+
+```c
+struct tm tm;
+  time_t varwaktu;
+ ```
+* Dengan menggunakan fungsi time() dan localtime() dalam library <time.h>, kita dapat menemukan waktu lokal sesuai dengan posisi kita berada. 
+* Code diatas berfungsi mengeset waktu saat ini variable varwaktu dengan fungsi time(NULL). Karena format dari variable varwaktu masih dalam epoch/unix timestamp, sehingga perlu diubah ke bentuk format yang sudah terstandard. Disini kami menggunakan fungsi localtime dan memasukkannya kedalam variable tm.
+
+```c
+pid_t pid, sid; // Variabel untuk menyimpan PID
+  pid = fork(); // Menyimpan PID dari Child Process
+
+  if (pid < 0) {
+     exit(EXIT_FAILURE); // Keluar saat fork gagal
+  }
+  if (pid > 0) {
+    exit(EXIT_SUCCESS); // Keluar saat fork berhasil
+  }
+  umask(0);
+  sid = setsid();
+  if (sid < 0) {
+    exit(EXIT_FAILURE);
+  }
+
+  close(STDIN_FILENO);
+  close(STDOUT_FILENO);
+  close(STDERR_FILENO);
+```
+* Code diatas merupakan Fungsi Daemon. Menurut Pengertiannya, Daemon adalah suatu program yang berjalan di background secara terus menerus tanpa adanya interaksi secara langsung dengan user yang sedang aktif.
+* Fungsi `umask` digunakan untuk mengatur permission dari suatu file pada saat file itu dibuat. Di sini kita mengatur nilai umask(0) agar mendapatkan akses full terhadap file yang dibuat oleh daemon. 
+* Langkah pertama adalah membuat sebuah parent process dan memunculkan child process dengan melakukan fork(). Kemudian bunuh parent process agar sistem operasi mengira bahwa proses telah selesai. Setelah itu child process akan membuat session ID (sid) menggunakan fungsi setsid(). Apabila gagal, proses tersebut langsung keluar.
+* Sebuah daemon tidak boleh menggunakan terminal. Oleh sebab itu kita harus menutup file descriptor standar (STDIN, STDOUT, STDERR).
+```c
+  close(STDIN_FILENO);
+  close(STDOUT_FILENO);
+  close(STDERR_FILENO);
+```
+
+**Main Program jengjeng
+```c
+  while (1) {
+    varwaktu = time(NULL);
+    tm = *localtime(&varwaktu);
+    if ((tm.tm_sec == atoi(argv[1]) || ((strcmp(argv[1],"*")) == 0)) && (tm.tm_min == atoi(argv[2]) || ((strcmp(argv[2],"*")) == 0)) && (tm.tm_hour == atoi(argv[3]) || ((strcmp(argv[3],"*") == 0)))) {
+
+      if (fork()==0) {
+        execl("/bin/bash", "bash", argv[4], NULL);
+        sleep(1);
+      }
+```
+* Pemberian value ulang terhadap variabel varwaktu dan tm dilakukan agar program tetap update perihal *current time* meski sedang berada di dalam while.
+* Melakukan comparing terhadap argumen yang dimasukkan oleh pengguna menggunakan `strcmp`. Condition yang ada di dalam if akan melakukan pengecekan. Bernilai true apabila argumen yang diinputkan sama dengan * atau waktunya sesuai dengan waktu saat ini. 
+* `sleep (1)` digunakan untuk mengatur agar fungsi while berjalan setiap satu detik.
+
+## Kesulitan
+1. Bobot soalnya susah banget :") 
+2. Pada saat ngerun , saya ngeset untuk tiap menit dan tiap jam. namun pada menit pertama, folder yang muncul langsung ada 2, tidak satu persatu. dan begitu seterusnya 
 
 ## Soal 2
 
