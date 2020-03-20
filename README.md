@@ -187,10 +187,10 @@ int main() {
  	 } 
 ```
 
-* `pid_t child_id,child_id2,child_id3;` menyimpan PID (Parent ID) di masing-masing variabel child. sedangkan untuk `int status` berfungsi untuk deklarasi variabel status bertipe integer.
+* `pid_t child_id,child_id2,child_id3;` untuk menyimpan PID (Parent ID) di masing-masing variabel child. sedangkan untuk `int status` berfungsi untuk deklarasi variabel status bertipe integer.
 * membuat direktori pada `/home/nisyua/modul_2/ ` bernama **indomie** menggunakan perintah `mkdir`dan terdapat argumen `-p` yang berfungsi untuk membuat directory pada `/home/nisyua/modul_2` yang belum terbuat.
 * syntax argument : `argv[n] = { {your-program-name}, {argument[1]}, {argument[2]},.....,{argument[n-2]}, NULL };`
-* parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap**
+* parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap** perintah tersebut disimpan dalam  `argv`
 
 
 ### B
@@ -211,7 +211,8 @@ child_id3 = fork();
 	}
 ```
 
-* Untuk mengekstrak file **jpg.zip** menggunakan perintah `unzip`
+* `if (child_id3 == 0)` maka proses berhasil/dapaat dijalankan. 
+* Untuk mengekstrak file **jpg.zip** menggunakan perintah `unzip` yang dieksekusi oleh `execv("/usr/bin/unzip", argv);`
 
 
 ### C
@@ -239,6 +240,8 @@ child_id4 = fork();
 		execl("/usr/bin/find", "find", "/home/nisyua/modul_2/jpg/", "-mindepth", "1", "-type", "d", "-name", "*", "-exec", "mv", "-t", "/home/nisyua/modul_2/indomie/", "{}", "+", (char *) NULL);
 	}
 ```
+* Pada proses `if (child_id4 == 0)` , `find` di jpg yang bertipe file dengan semua nama di direktori `/home/nisyua/modul_2/jpg` setelah itu `move` semuanya ke sedaap dan tunggu selama 2detik. 
+* Sama seperti child_id4, pada proses `if(child_id5 == 0)` juga sama sistemnya. `find` di jpg yang bertipe direktori pada `/home/nisyua/modul_2/jpg`, lalu pindahkan semua ke direktori *indomie*
 
 ### D
 *Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
