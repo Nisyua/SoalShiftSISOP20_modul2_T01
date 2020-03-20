@@ -136,6 +136,8 @@ Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder bar
 
 *Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).*
 
+Source Code : 
+[Github] (http://github,com/SoalShiftSISOP20_modul2_T01/soal 3/jaya112.c) 
 ### Library yang digunakan
 
 ```C
@@ -284,3 +286,4 @@ Kendala yang dialami :
 1. Bobot soal yang sangat sulit bagi kami untuk dikerjakan
 2. Soal yang dibuat terlalu belibet
 3. Soal yang terlalu banyak dan susah, selain itu kami belum terbiasa dengan fungsi-fungsi program c yang bisa digunakan di ubuntu sehingga kami susah untuk mengerjakan semua soal dan membutuhkan waktu yang cukup lama untuk mengerjakannya
+4. Jarak yang cukup jauh mengakibatkan kami susah untuk berkordinasi karena Covid-19 .
