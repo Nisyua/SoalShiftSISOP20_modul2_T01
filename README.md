@@ -7,7 +7,7 @@ Repository ini Sebagai Laporan Resmi Soal Shift Modul 2 Praktikum Sistem Operasi
   - Anis Saidatur Rochma    [05311840000002]
   - Kadek Nesya Kurniadewi  [05311840000009]
 
-### Soal 1
+## Soal 1
 
 Buatlah program C yang menyerupai crontab untuk menjalankan script bash dengan ketentuan sebagai berikut:
 
@@ -25,11 +25,11 @@ Contoh: `./program \* 34 7 /home/somi/test.sh`
 
 Pembahasan:
 
-### Soal 2
+## Soal 2
 
 Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.
 
-### A 
+## A 
 
 Kiwa membuat sebuah folder khusus, di dalamnya dia membuat sebuah program C yang per 30 detik membuat sebuah folder dengan nama timestamp [YYYY-mm-dd_HH:ii:ss].
 
@@ -99,7 +99,7 @@ child_id2 = fork();
    
 ![](img/ssfolder.jpg)
 
-### B
+## B
 
 *Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsum.photos/, dimana tiap gambar di download setiap 5 detik. Tiap gambar berbentuk persegi dengan ukuran **(t%1000)+100 piksel** dimana t adalah detik Epoch Unix. Gambar tersebut diberi nama dengan format timestamp [YYYY-mm-dd_HH:ii:ss].
 * soal nomor 2B ini merupakan lanjutan dari soal nomor 2A dan saling berhubungan sehingga code yang dibuat menjadi satu, untuk memenuhi permintaan soal nomor 2B ini memiliki source code seperti dibawah ini :
@@ -132,7 +132,7 @@ Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder bar
 
 ![](img/ss20gambar.jpg)
 
-### Soal 3
+## Soal 3
 
 *Jaya adalah seorang programmer handal mahasiswa informatika. Suatu hari dia memperoleh tugas yang banyak dan berbeda tetapi harus dikerjakan secara bersamaan (multiprocessing).*
 
@@ -150,7 +150,7 @@ Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder bar
 #include <sys/wait.h>
 ```
 
-### A
+## A
 
 *Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".
 
@@ -193,7 +193,7 @@ int main() {
 * parent process menunggu directory baru terbuat, setelah itu sleep(5) atau selang 5 detik parent process membuat child process lagi untuk membuat direktori baru yaitu **sedaap** perintah tersebut disimpan dalam  `argv`
 
 
-### B
+## B
 
 Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori "***/home/[USER]/modul2/***". 
 
@@ -215,7 +215,7 @@ child_id3 = fork();
 * Untuk mengekstrak file **jpg.zip** menggunakan perintah `unzip` yang dieksekusi oleh `execv("/usr/bin/unzip", argv);`
 
 
-### C
+## C
 
 *Diberilah tugas baru yaitu setelah di ekstrak, hasil dari ekstrakan tersebut (di dalam direktori "***/home/[USER]/modul2/jpg/"***) harus dipindahkan sesuai dengan pengelompokan, semua file harus dipindahkan ke "***/home/[USER]/modul2/sedaap/***" dan semua direktori harus dipindahkan ke "***/home[USER]/modul2/indomie/***".
 
@@ -243,7 +243,7 @@ child_id4 = fork();
 * Pada proses `if (child_id4 == 0)` , `find` di jpg yang bertipe file dengan semua nama di direktori ***/home/nisyua/modul_2/jpg*** setelah itu `move` semuanya ke ***sedaap*** dan tunggu selama 2detik. 
 * Sama seperti child_id4, pada proses `if(child_id5 == 0)` juga sama sistemnya. `find` di jpg yang bertipe direktori pada ***/home/nisyua/modul_2/jpg***, lalu pindahkan semua ke direktori ***indomie***
 
-### D
+## D
 *Untuk setiap direktori yang dipindahkan ke "***/home/[USER]/modul2/indomie/***" harus membuat dua file kosong. File yang pertama diberi nama "**coba1.txt**", lalu 3 detik kemudian membuat file bernama "**coba2.txt**". (contoh : "***/home/[USER]/modul2/indomie/{nama_folder}/coba1.txt***").
 
 ```C
