@@ -11,28 +11,30 @@ Repository ini Sebagai Laporan Resmi Soal Shift Modul 2 Praktikum Sistem Operasi
 
 Buatlah program C yang menyerupai crontab untuk menjalankan script bash dengan ketentuan sebagai berikut:
 
-    Program menerima 4 argumen berupa:
+**a**. Program menerima 4 argumen berupa:
+```
         Detik: 0-59 atau * (any value)
         Menit: 0-59 atau * (any value)
         Jam: 0-23 atau * (any value)
         Path file .sh
-    Program akan mengeluarkan pesan error jika argumen yang diberikan tidak sesuai
-    Program hanya menerima 1 config cron
-    Program berjalan di background (daemon)
-    Tidak boleh menggunakan fungsi system()
+```
+**b**. Program akan mengeluarkan pesan error jika argumen yang diberikan tidak sesuai
+**c**. Program hanya menerima 1 config cron
+**d**. Program berjalan di background (daemon)
+**e**. Tidak boleh menggunakan fungsi system()
 
-Contoh: `./program \* 34 7 /home/somi/test.sh`
+Contoh: `./program \* 34 7 /home/somi/test.sh` (script bash test.sh akan dijalankan setiap jam 07.34 waktu lokal)
 
 Pembahasan:
 
 ## Soal 2
 
-Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.
+*Shisoppu mantappu! itulah yang selalu dikatakan Kiwa setiap hari karena sekarang dia merasa sudah jago materi sisop. Karena merasa jago, suatu hari Kiwa iseng membuat sebuah program.*
 [Source Code](https://github.com/anissaidatur/SoalShiftSISOP20_modul2_T01/blob/master/soal_2/dua.c)
 
 ## A 
 
-Kiwa membuat sebuah folder khusus, di dalamnya dia membuat sebuah program C yang per 30 detik membuat sebuah folder dengan nama timestamp [YYYY-mm-dd_HH:ii:ss].
+*Kiwa membuat sebuah folder khusus, di dalamnya dia membuat sebuah program C yang per 30 detik membuat sebuah folder dengan nama timestamp [YYYY-mm-dd_HH:ii:ss].*
 
 ```C
 #include <stdlib.h>
@@ -102,7 +104,8 @@ child_id2 = fork();
 
 ## B
 
-*Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsum.photos/, dimana tiap gambar di download setiap 5 detik. Tiap gambar berbentuk persegi dengan ukuran **(t%1000)+100 piksel** dimana t adalah detik Epoch Unix. Gambar tersebut diberi nama dengan format timestamp [YYYY-mm-dd_HH:ii:ss].
+*Tiap-tiap folder lalu diisi dengan 20 gambar yang di download dari https://picsum.photos/, dimana tiap gambar di download setiap 5 detik. Tiap gambar berbentuk persegi dengan ukuran **(t%1000)+100 piksel** dimana t adalah detik Epoch Unix. Gambar tersebut diberi nama dengan format timestamp [YYYY-mm-dd_HH:ii:ss].*
+
 * soal nomor 2B ini merupakan lanjutan dari soal nomor 2A dan saling berhubungan sehingga code yang dibuat menjadi satu, untuk memenuhi permintaan soal nomor 2B ini memiliki source code seperti dibawah ini :
 ```C
 	child_id3 = fork(); 
@@ -154,7 +157,7 @@ Screenshot 20 gambar dengan format nama timestamp yang terletak dalam folder bar
 
 ## A
 
-*Program buatan jaya harus bisa membuat dua direktori di "***/home/[USER]/modul2/***". Direktori yang pertama diberi nama "indomie", lalu *lima detik* kemudian membuat direktori yang kedua bernama "sedaap".
+*Program buatan jaya harus bisa membuat dua direktori di ***/home/[USER]/modul2/***. Direktori yang pertama diberi nama **indomie**, lalu *lima detik* kemudian membuat direktori yang kedua bernama **sedaap**.
 
 ```C	
 int main() {
@@ -197,7 +200,7 @@ int main() {
 
 ## B
 
-Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori "***/home/[USER]/modul2/***". 
+*Kemudian program tersebut harus meng-ekstrak file jpg.zip di direktori ***/home/[USER]/modul2/***. 
 
 ```C
 child_id3 = fork();
