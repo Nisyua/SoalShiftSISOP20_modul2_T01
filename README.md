@@ -124,8 +124,8 @@ pid_t pid, sid; // Variabel untuk menyimpan PID
 
 * Program tersebut menjalankan file test.sh setiap menit dan setiap jam pada jam 20 menit 27. Jika dilihat shell scritpt yang dijalankan akan terus melakukan mkdir dengan date saat ini sampai jam 20 dan menit 27 berikutnya.
 
-**Isi file test.sh**
-![](img/bash.png)
+**Isi File test.sh**
+[](img/bash.png)
 
 ## Kesulitan
 1. Bobot soalnya susah banget :") 
